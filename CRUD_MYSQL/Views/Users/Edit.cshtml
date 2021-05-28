@@ -1,0 +1,42 @@
+﻿@model CRUD_MYSQL.Models.User
+
+@{
+    ViewData["Title"] = "Edit";
+    ViewData["FullTitle"] = "Edit user";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <input type="hidden" asp-for="CreatedAt" />
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary w-100" />
+            </div>
+
+            <div>
+                <a asp-action="Index" class="btn btn-secondary w-100">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
